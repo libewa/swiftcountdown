@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "./host"
+		},
+		{
+			"path": "./micro"
+		}
+	],
+	"settings": {
+		"todo-tree.tree.showBadges": false
+	}
+}

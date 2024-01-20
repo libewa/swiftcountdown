@@ -1,0 +1,52 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:host}",
+            "name": "Debug host",
+            "program": "${workspaceFolder:host}/.build/debug/host",
+            "preLaunchTask": "swift: Build Debug host"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:host}",
+            "name": "Release host",
+            "program": "${workspaceFolder:host}/.build/release/host",
+            "preLaunchTask": "swift: Build Release host"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:host}",
+            "name": "Debug countdownhost",
+            "program": "${workspaceFolder:host}/.build/debug/countdownhost",
+            "preLaunchTask": "swift: Build Debug countdownhost"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:host}",
+            "name": "Release countdownhost",
+            "program": "${workspaceFolder:host}/.build/release/countdownhost",
+            "preLaunchTask": "swift: Build Release countdownhost"
+        }
+    ]
+}
