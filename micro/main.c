@@ -1,22 +1,23 @@
-#include "pico/stdlib.h"
-#include "pico/i2c_slave.h"
-#include "SwiftLib/SwiftLib.h"
-#include <stdlib.h>
-#include <stdio.h>
+#include "slave_mem_i2c.c"
+#include "segment.c"
 
-static struct context
-{
-    uint8_t mem[256];
-    uint8_t mem_address;
-    bool mem_address_written;
-}
+int hour, minute, second, rem_hours, rem_minutes, rem_seconds, number;
+void main() {
+    setup_slave();
+    while (true) {
+        hour = context.mem[0];
+        minute = context.mem[1];
+        second = context.mem[2];
+        rem_hours = 23 - hour;
+        rem_minutes = 59 - minute;
+        rem_seconds = 59 - second;
 
+        if (hour == 23) {
+            number = (rem_minutes)  * 100 + (rem_seconds);
+        } else {
+            number = (rem_hours)  * 100 + (rem_minutes);
+        }
 
-int main()
-{
-    #ifndef PICO_DEFAULT_I2C_SDA_PIN
-    #warning The target does not support I2C.
-    #else
-    setup_slave()
-    #endif
+        display_number(number, 200, 2);
+    }
 }

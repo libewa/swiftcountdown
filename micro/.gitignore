@@ -1,2 +1,6 @@
+.idea
+.vscode
+_deps
+cmake-*
+build
 .DS_Store
-/build

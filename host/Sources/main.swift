@@ -15,9 +15,9 @@ while !i2c.isReachable(0x17) {} // address used in official i2c example
 print("Pico connected!")
 
 while true {
-    var now = Date()
-    var hour   = UInt8(cal.component(.hour,   from: now))
-    var minute = UInt8(cal.component(.minute, from: now))
-    var second = UInt8(cal.component(.second, from: now))
-    i2c.writeData(0x00, command: 1, values: [hour, minute, second]) //TODO: Use correct values
+    let now = Date()
+    let hour   = UInt8(cal.component(.hour,   from: now))
+    let minute = UInt8(cal.component(.minute, from: now))
+    let second = UInt8(cal.component(.second, from: now))
+    i2c.writeData(0x17, command: 0, values: [hour, minute, second])
 }

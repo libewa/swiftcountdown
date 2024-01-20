@@ -20,6 +20,8 @@
 		"cmake.configureArgs": [
 			"-G Ninja"
 		],
-		"cmake.sourceDirectory": "${workspaceFolder}/micro"
+		"files.associations": {
+			"stdio.h": "c"
+		}
 	}
 }
