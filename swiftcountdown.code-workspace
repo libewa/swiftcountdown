@@ -7,7 +7,19 @@
 			"path": "./micro"
 		}
 	],
+	"extensions": {
+		"recommendations": [
+			"sswg.swift-lang",
+			"ms-vscode.cpptools-extension-pack"
+		]
+	},
 	"settings": {
-		"todo-tree.tree.showBadges": false
+		"cmake.automaticReconfigure": true,
+		"cmake.buildDirectory": "${workspaceFolder}/build",
+		"cmake.clearOutputBeforeBuild": true,
+		"cmake.configureArgs": [
+			"-G Ninja"
+		],
+		"cmake.sourceDirectory": "${workspaceFolder}/micro"
 	}
 }

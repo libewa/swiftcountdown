@@ -10,12 +10,6 @@ let I2C_SLAVE_ADDRESS: UInt = 0x17
 let I2C_SLAVE_SCL_PIN: UInt = PICO_DEFAULT_I2C_SCL_PIN
 let I2C_SLAVE_SDA_PIN: UInt = PICO_DEFAULT_I2C_SDA_PIN
 
-struct PicoI2CContext {
-    var mem: (UInt8, UInt8, UInt8) = (0, 0, 0)
-    var mem_address: UInt8 = 0
-    var mem_address_written: Bool = false
-}
-var context = PicoI2CContext()
 
 func i2c_slave_handler(i2c: UnsafePointer<i2c_inst_t>, event: UnsafePointer<i2c_slave_event>) {
     switch event {
